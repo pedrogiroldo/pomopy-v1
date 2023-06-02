@@ -42,7 +42,7 @@ def pomodoro():
 
             os.system("clear")  # Limpa o terminal no Linux/Unix
             # os.system('cls')  # Limpa o terminal no Windows
-            choice = input("Digite 'y' para iniciar a pausa ou 'n' para sair: ")
+            choice = input("Digite 's' para iniciar a pausa ou 'n' para sair: ")
             os.system("clear")  # Limpa o terminal no Linux/Unix
             # os.system('cls')  # Limpa o terminal no Windows
             if choice.lower() == "n":
@@ -64,7 +64,7 @@ def pomodoro():
 
             os.system("clear")  # Limpa o terminal no Linux/Unix
             # os.system('cls')  # Limpa o terminal no Windows
-            choice = input("Digite 'y' para iniciar a pausa ou 'n' para sair: ")
+            choice = input("Digite 's' para iniciar a pausa ou 'n' para sair: ")
             os.system("clear")  # Limpa o terminal no Linux/Unix
             # os.system('cls')  # Limpa o terminal no Windows
             if choice.lower() == "n":
@@ -82,7 +82,7 @@ def pomodoro():
         os.system("clear")  # Limpa o terminal no Linux/Unix
         # os.system('cls')  # Limpa o terminal no Windows
         play_sound()
-        choice = input("Digite 'y' para continuar ou 'n' para sair: ")
+        choice = input("Digite 's' para continuar ou 'n' para sair: ")
         os.system("clear")  # Limpa o terminal no Linux/Unix
         # os.system('cls')  # Limpa o terminal no Windows
         if choice.lower() == "n":
