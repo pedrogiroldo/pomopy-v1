@@ -15,16 +15,16 @@ def play_sound():
 
 
 def pomodoro():
-    pomodoro_duration = int(input("Duração do pomodoro (minutos): "))
-    short_break_duration = int(input("Duração da pausa curta (minutos): "))
-    long_break_duration = int(input("Duração da pausa longa (minutos): "))
+    pomodoro_duration = int(input("Pomodoro duration (minutes): "))
+    short_break_duration = int(input("Short break duration (minutes): "))
+    long_break_duration = int(input("Long break duration (minutes): "))
     pomodoros_completed = 0
 
     while True:
-        os.system("clear")  # Limpa o terminal no Linux/Unix
-        # os.system('cls')  # Limpa o terminal no Windows
+        os.system("clear")  # Clear the terminal in Linux/Unix
+        # os.system('cls')  # Clear the terminal in Windows
 
-        print(f"Pomodoro {pomodoros_completed + 1}: Trabalhando...")
+        print(f"Pomodoro {pomodoros_completed + 1}: Working...")
         for remaining in range(pomodoro_duration * 60, 0, -1):
             minutes = remaining // 60
             seconds = remaining % 60
@@ -33,20 +33,20 @@ def pomodoro():
 
         pomodoros_completed += 1
         if pomodoros_completed % 4 == 0:
-            os.system("clear")  # Limpa o terminal no Linux/Unix
-            # os.system('cls')  # Limpa o terminal no Windows
+            os.system("clear")  # Clear the terminal in Linux/Unix
+            # os.system('cls')  # Clear the terminal in Windows
 
             print("\n")
             play_sound()
-            print(f"Pomodoro concluído! Pausa longa de {long_break_duration} minutos.")
+            print(f"Pomodoro completed! Long break of {long_break_duration} minutes.")
 
-            os.system("clear")  # Limpa o terminal no Linux/Unix
-            # os.system('cls')  # Limpa o terminal no Windows
-            choice = input("Digite 'y' para iniciar a pausa ou 'n' para sair: ")
-            os.system("clear")  # Limpa o terminal no Linux/Unix
-            # os.system('cls')  # Limpa o terminal no Windows
+            os.system("clear")  # Clear the terminal in Linux/Unix
+            # os.system('cls')  # Clear the terminal in Windows
+            choice = input("Enter 'y' to start the break or 'n' to exit: ")
+            os.system("clear")  # Clear the terminal in Linux/Unix
+            # os.system('cls')  # Clear the terminal in Windows
             if choice.lower() == "n":
-                print("Encerrando o cronômetro Pomodoro...")
+                print("Exiting the Pomodoro timer...")
                 return
 
             for remaining in range(long_break_duration * 60, 0, -1):
@@ -55,20 +55,20 @@ def pomodoro():
                 print(f"{minutes:02d}:{seconds:02d}", end="\r")
                 time.sleep(1)
         else:
-            os.system("clear")  # Limpa o terminal no Linux/Unix
-            # os.system('cls')  # Limpa o terminal no Windows
+            os.system("clear")  # Clear the terminal in Linux/Unix
+            # os.system('cls')  # Clear the terminal in Windows
 
             print("\n")
             play_sound()
-            print(f"Pomodoro concluído! Pausa curta de {short_break_duration} minutos.")
+            print(f"Pomodoro completed! Short break of {short_break_duration} minutes.")
 
-            os.system("clear")  # Limpa o terminal no Linux/Unix
-            # os.system('cls')  # Limpa o terminal no Windows
-            choice = input("Digite 'y' para iniciar a pausa ou 'n' para sair: ")
-            os.system("clear")  # Limpa o terminal no Linux/Unix
-            # os.system('cls')  # Limpa o terminal no Windows
+            os.system("clear")  # Clear the terminal in Linux/Unix
+            # os.system('cls')  # Clear the terminal in Windows
+            choice = input("Enter 'y' to start the break or 'n' to exit: ")
+            os.system("clear")  # Clear the terminal in Linux/Unix
+            # os.system('cls')  # Clear the terminal in Windows
             if choice.lower() == "n":
-                print("Encerrando o cronômetro Pomodoro...")
+                print("Exiting the Pomodoro timer...")
                 return
 
             for remaining in range(short_break_duration * 60, 0, -1):
@@ -79,20 +79,20 @@ def pomodoro():
 
         print("\n")
 
-        os.system("clear")  # Limpa o terminal no Linux/Unix
-        # os.system('cls')  # Limpa o terminal no Windows
+        os.system("clear")  # Clear the terminal in Linux/Unix
+        # os.system('cls')  # Clear the terminal in Windows
         play_sound()
-        choice = input("Digite 'y' para continuar ou 'n' para sair: ")
-        os.system("clear")  # Limpa o terminal no Linux/Unix
-        # os.system('cls')  # Limpa o terminal no Windows
+        choice = input("Enter 'y' to continue or 'n' to exit: ")
+        os.system("clear")  # Clear the terminal in Linux/Unix
+        # os.system('cls')  # Clear the terminal in Windows
         if choice.lower() == "n":
-            print("Encerrando o cronômetro Pomodoro...")
+            print("Exiting the Pomodoro timer...")
             return
 
-        os.system("clear")  # Limpa o terminal no Linux/Unix
-        # os.system('cls')  # Limpa o terminal no Windows
-        print("Reiniciando...\n")
+        os.system("clear")  # Clear the terminal in Linux/Unix
+        # os.system('cls')  # Clear the terminal in Windows
+        print("Restarting...\n")
 
 
-# Executa o cronômetro Pomodoro
+# Run the Pomodoro timer
 pomodoro()
