@@ -1,5 +1,17 @@
 import os
 import time
+import platform
+
+
+def play_sound():
+    if platform.system() == "Windows":
+        os.system(
+            "powershell -c \"(New-Object Media.SoundPlayer 'done.wav').PlaySync()\""
+        )
+    elif platform.system() == "Darwin":
+        os.system("afplay done.wav")
+    else:
+        os.system("aplay done.wav")
 
 
 def pomodoro():
@@ -25,6 +37,7 @@ def pomodoro():
             # os.system('cls')  # Limpa o terminal no Windows
 
             print("\n")
+            play_sound()
             print(f"Pomodoro concluído! Pausa longa de {long_break_duration} minutos.")
 
             os.system("clear")  # Limpa o terminal no Linux/Unix
@@ -46,6 +59,7 @@ def pomodoro():
             # os.system('cls')  # Limpa o terminal no Windows
 
             print("\n")
+            play_sound()
             print(f"Pomodoro concluído! Pausa curta de {short_break_duration} minutos.")
 
             os.system("clear")  # Limpa o terminal no Linux/Unix
@@ -67,6 +81,7 @@ def pomodoro():
 
         os.system("clear")  # Limpa o terminal no Linux/Unix
         # os.system('cls')  # Limpa o terminal no Windows
+        play_sound()
         choice = input("Digite 'y' para continuar ou 'n' para sair: ")
         os.system("clear")  # Limpa o terminal no Linux/Unix
         # os.system('cls')  # Limpa o terminal no Windows
