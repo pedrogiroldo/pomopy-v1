@@ -1,23 +1,23 @@
 # POMOPY
 
-O pomopy é um programa de pomodoro escrito em python, simples, minimalista e serve para ser rodado no terminal.
+Pomopy is a Pomodoro program written in Python, simple, minimalist, and designed to be run in the terminal.
 
-## Uso
+## Usage
 
-O pomopy suporta Windows, Linux e MacOs, existem dois executaveis para facilitar a abertura, mas você também pode rodar o script normalmente, ou até adicionar o pomopy ao PATH do seu computador.
+Pomopy supports Windows, Linux, and MacOS. There are two executables available for easier opening, but you can also run the script directly or add Pomopy to your computer's PATH.
 
-### Rodar o script no terminal
+### Running the script in the terminal
 
-Para rodar o script no terminal, basta abri-lo (lembre-se de ter a última versão do Python instalada) na pasta onde se encontra o pomo.py e executar o comando:
+To run the script in the terminal, simply open it (make sure you have the latest version of Python installed) in the folder where pomo.py is located, and execute the following command:
 
 ```
 python3 pomo.py
 ```
-### Usar os executáveis
+### Using the executables
 
-No diretório existem os arquivos pomopy.bat (Windows) e pomopy.sh (Linux). Eles são apenas uma maneira mais fácil de executar o código "python3...". No Windows, basta executar o arquivo normalmente, e caso esteja usando um Linux, com o terminal aberto na pasta do código digite o seguinte comando:
+In the directory, you'll find the files pomopy.bat (Windows) and pomopy.sh (Linux). They are just an easier way to execute the "python3..." code. In Windows, simply run the file normally, and if you're using Linux with the terminal open in the code folder, type the following command:
 ```
 ./pomopy.sh
 ```
-### Adicionar no PATH
-Também é possivel adicionar o código como um atalho no PATH do seu computador. Confira como fazer isso no sistema operacional utilizado.
+### Adding to the PATH
+You can also add the code as a shortcut in your computer's PATH. Check how to do this in the operating system you're using.
