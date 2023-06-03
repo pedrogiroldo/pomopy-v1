@@ -3,15 +3,22 @@ import time
 import platform
 
 
+pomodoro_duration = int(input("Pomodoro duration (minutes): "))
+short_break_duration = int(input("Short break duration (minutes): "))
+long_break_duration = int(input("Long break duration (minutes): "))
+doneSound = input("Sound alert? (y/n): ")
+
+
 def play_sound():
-    if platform.system() == "Windows":
-        os.system(
-            "powershell -c \"(New-Object Media.SoundPlayer 'done.wav').PlaySync()\""
-        )
-    elif platform.system() == "Darwin":
-        os.system("afplay done.wav")
-    else:  # Linux
-        os.system("aplay done.wav")
+    if doneSound == 'y':
+        if platform.system() == "Windows":
+            os.system(
+                "powershell -c \"(New-Object Media.SoundPlayer 'done.wav').PlaySync()\""
+            )
+        elif platform.system() == "Darwin":
+            os.system("afplay done.wav")
+        else:  # Linux
+            os.system("aplay done.wav")
 
 
 def clear_terminal():
@@ -48,9 +55,6 @@ def pomodoro():
     clear_terminal()
     print("=== Pomopy ===")
 
-    pomodoro_duration = int(input("Pomodoro duration (minutes): "))
-    short_break_duration = int(input("Short break duration (minutes): "))
-    long_break_duration = int(input("Long break duration (minutes): "))
     pomodoros_completed = 0
 
     while True:
