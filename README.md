@@ -21,3 +21,25 @@ In the directory, you'll find the files pomopy.bat (Windows) and pomopy.sh (Linu
 ```
 ### Adding to the PATH
 You can also add the code as a shortcut in your computer's PATH. Check how to do this in the operating system you're using.
+
+#### For macOS and Linux:
+Open the Terminal.
+Execute the following command to open the .bashrc file in a text editor:
+```bash
+nano ~/.bashrc
+```
+Add the following line to the file:
+```bash
+alias pomopy='python3 /path/to/directory/pomo.py'
+```
+Make sure to replace "/path/to/directory" with the correct path to the directory where the pomo.py file is located.
+
+Press Ctrl + X to exit the nano editor, then press Y to save the changes.
+
+Execute the following command to update the terminal profile file:
+```bash
+source ~/.bashrc
+```
+Now, you can simply type `pomopy` in the terminal to run the pomo.py program using Python 3. Make sure you have correctly replaced the path to the pomo.py file directory.
+
+Remember to replace `/path/to/directory` with the correct path to the directory where the pomo.py file is located. Restart the terminal for the changes to take effect.
