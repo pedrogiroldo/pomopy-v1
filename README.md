@@ -42,4 +42,4 @@ source ~/.bashrc
 ```
 Now, you can simply type `pomopy` in the terminal to run the pomo.py program using Python 3. Make sure you have correctly replaced the path to the pomo.py file directory.
 
-Remember to replace `/path/to/directory` with the correct path to the directory where the pomo.py file is located. Restart the terminal for the changes to take effect.
+<!-- Remember to replace `/path/to/directory` with the correct path to the directory where the pomo.py file is located. Restart the terminal for the changes to take effect. -->
