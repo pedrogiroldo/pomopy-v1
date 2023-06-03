@@ -46,7 +46,7 @@ def start_break(duration, break_type):
 
 def pomodoro():
     clear_terminal()
-    print("=== Pomodoro Timer ===")
+    print("=== Pomopy ===")
 
     pomodoro_duration = int(input("Pomodoro duration (minutes): "))
     short_break_duration = int(input("Short break duration (minutes): "))
