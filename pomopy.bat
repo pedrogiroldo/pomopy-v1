@@ -1,3 +1,3 @@
-python3 pomo.py
+python3 .\pomo.py
 
 cmd
