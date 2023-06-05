@@ -2,6 +2,11 @@
 
 Pomopy is a Pomodoro program written in Python, simple, minimalist, and designed to be run in the terminal.
 
+## Screenshot
+<img src="./readme_assets/screen.jpg">
+
+<hr>
+
 ## Usage
 
 Pomopy supports Windows, Linux, and MacOS. There are two executables available for easier opening, but you can also run the script directly or add Pomopy to your computer's PATH.
