@@ -1,7 +1,6 @@
 import os
 import time
 import platform
-from playsound import playsound
 
 
 pomodoro_duration = int(input("Pomodoro duration (minutes): "))
