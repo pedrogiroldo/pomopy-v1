@@ -2,6 +2,7 @@ import os
 import time
 import platform
 import sys
+
 if platform.system() == "Windows":
     import msvcrt  # For Windows
 else:
@@ -61,7 +62,11 @@ def kbhit():
     if platform.system() == "Windows":
         return msvcrt.kbhit()  # Check if a key has been pressed on Windows
     elif platform.system() == "Darwin" or platform.system() == "Linux":
-        return select.select([sys.stdin], [], [], 0) == ([sys.stdin], [], [])  # Check if there is input available on macOS and Linux
+        return select.select([sys.stdin], [], [], 0) == (
+            [sys.stdin],
+            [],
+            [],
+        )  # Check if there is input available on macOS and Linux
 
 
 def getch():
@@ -81,7 +86,7 @@ def pomodoro():
         clear_terminal()
         pomodoros_completed += 1
 
-        print(f"Pomodoro {pomodoros_completed}: Working...")
+        print(f"Pomodoro {pomodoros_completed}: Working... Press \"p\" to pause")
         for remaining in range(pomodoro_duration * 60, 0, -1):
             minutes = remaining // 60
             seconds = remaining % 60
