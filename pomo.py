@@ -107,7 +107,3 @@ def pomodoro():
 
 # Run the Pomodoro timer
 pomodoro()
-
-
-# Run the Pomodoro timer
-pomodoro()
