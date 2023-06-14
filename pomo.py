@@ -85,7 +85,7 @@ def pomodoro():
         for remaining in range(pomodoro_duration * 60, 0, -1):
             minutes = remaining // 60
             seconds = remaining % 60
-            print(f"Time remaining: {format_time(minutes, seconds)}\n", end="\r")
+            print(f"Time remaining: {format_time(minutes, seconds)}", end="\r")
 
             # Check for user input to pause or resume the timer
             while kbhit():
