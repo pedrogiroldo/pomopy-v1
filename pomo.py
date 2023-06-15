@@ -100,6 +100,7 @@ def pomodoro():
                     while True:
                         key = getch()
                         if key == "r":
+                            clear_terminal()
                             break
                         elif key == "e":
                             print("Exiting the Pomodoro timer...")
