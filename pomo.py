@@ -1,6 +1,12 @@
 import os
 import time
 import platform
+import sys
+
+if platform.system() == "Windows":
+    import msvcrt  # For Windows
+else:
+    import select  # For macOS and Linux
 
 
 pomodoro_duration = int(input("Pomodoro duration (minutes): "))
@@ -52,6 +58,24 @@ def start_break(duration, break_type):
     clear_terminal()
 
 
+def kbhit():
+    if platform.system() == "Windows":
+        return msvcrt.kbhit()  # Check if a key has been pressed on Windows
+    elif platform.system() == "Darwin" or platform.system() == "Linux":
+        return select.select([sys.stdin], [], [], 0) == (
+            [sys.stdin],
+            [],
+            [],
+        )  # Check if there is input available on macOS and Linux
+
+
+def getch():
+    if platform.system() == "Windows":
+        return msvcrt.getch().decode()  # Get a keypress on Windows
+    elif platform.system() == "Darwin" or platform.system() == "Linux":
+        return sys.stdin.read(1)  # Get a keypress on macOS and Linux
+
+
 def pomodoro():
     clear_terminal()
     print("=== Pomopy ===")
@@ -62,11 +86,26 @@ def pomodoro():
         clear_terminal()
         pomodoros_completed += 1
 
-        print(f"Pomodoro {pomodoros_completed}: Working...")
+        print(f"Pomodoro {pomodoros_completed}: Working... Press \"p\" to pause")
         for remaining in range(pomodoro_duration * 60, 0, -1):
             minutes = remaining // 60
             seconds = remaining % 60
             print(f"Time remaining: {format_time(minutes, seconds)}", end="\r")
+
+            # Check for user input to pause or resume the timer
+            while kbhit():
+                key = getch()
+                if key == "p":
+                    print("\nPaused. Press 'r' to resume or 'e' to exit.")
+                    while True:
+                        key = getch()
+                        if key == "r":
+                            clear_terminal()
+                            break
+                        elif key == "e":
+                            print("Exiting the Pomodoro timer...")
+                            return
+
             time.sleep(1)
 
         clear_terminal()
