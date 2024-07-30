@@ -2,6 +2,7 @@ import os
 import time
 import platform
 import sys
+from playsound import playsound
 
 if platform.system() == "Windows":
     import msvcrt  # For Windows
@@ -17,14 +18,7 @@ doneSound = input("Sound alert? (y/n): ")
 
 def play_sound():
     if doneSound == "y":
-        if platform.system() == "Windows":
-            os.system(
-                "powershell -c \"(New-Object Media.SoundPlayer 'done.wav').PlaySync()\""
-            )
-        elif platform.system() == "Darwin":
-            os.system("afplay done.wav")
-        else:  # Linux
-            os.system("aplay done.wav")
+        playsound("done.wav")
 
 
 def clear_terminal():
@@ -86,7 +80,7 @@ def pomodoro():
         clear_terminal()
         pomodoros_completed += 1
 
-        print(f"Pomodoro {pomodoros_completed}: Working... Press \"p\" to pause")
+        print(f'Pomodoro {pomodoros_completed}: Working... Press "p" to pause')
         for remaining in range(pomodoro_duration * 60, 0, -1):
             minutes = remaining // 60
             seconds = remaining % 60
